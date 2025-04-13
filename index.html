@@ -7,8 +7,6 @@
   <title>Movie World</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/myscript.js"></script>
-  <script src="js/date.js" defer></script>
 </head>
 
 <body>
@@ -65,7 +63,6 @@
         </div>
       </div>
     </section>
-
     <hr class="hr-shadow">
 
     <section>
@@ -93,7 +90,6 @@
         </div>
       </div>
     </section>
-
     <hr class="hr-shadow">
 
     <section>
@@ -122,33 +118,7 @@
       </div>
     </section>
   </div>
-
-  <script src="slider.js"></script>
-  <script>
-    (function(d) {
-      'use strict';
-      const icon = d.querySelector('.icon');
-      const theBody = d.querySelector('body');
-      const menu = d.querySelector('.menu');
-
-      if (icon && theBody) {
-        icon.addEventListener('click', function(event) {
-          event.stopPropagation();
-          theBody.classList.toggle('menu-open');
-        });
-
-        if (menu) {
-          menu.addEventListener('click', function(event) {
-            event.stopPropagation();
-          });
-        }
-
-        document.addEventListener('click', function() {
-          theBody.classList.remove('menu-open');
-        });
-      }
-    })(document);
-  </script>
+  <script src="js/myscript.js"></script>
 
   <footer>
     <div class="footer">
