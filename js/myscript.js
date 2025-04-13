@@ -23,45 +23,69 @@
 })(document);
 
 document.addEventListener("DOMContentLoaded", function () {
-  const track = document.querySelector(".slider-track");
-  const dots = document.querySelectorAll(".dot");
-  const slider = document.getElementById("hover-slider");
-  const slideCount = document.querySelectorAll(".slider-track a").length;
-  const visibleSlides = 4;
-  const slideWidth = 220; // image width + margin
-  let currentIndex = 0;
-  let hoverInterval;
+  document.querySelectorAll(".hover-slider").forEach(slider => {
+    const track = slider.querySelector(".slider-track");
+    const dots = slider.querySelectorAll(".dot");
+    const slides = Array.from(slider.querySelectorAll(".slider-track a"));
+    const slideCount = slides.length;
+    const visibleSlides = 4;
+    const slideWidth = 220; // Adjust based on your layout
+    let currentIndex = 0;
+    let hoverInterval;
 
-  function goToIndex(index) {
-    const maxIndex = slideCount - visibleSlides;
-    if (index > maxIndex) index = 0;
-    if (index < 0) index = maxIndex;
+    // Clone first few slides and append them
+    for (let i = 0; i < visibleSlides; i++) {
+      const clone = slides[i].cloneNode(true);
+      track.appendChild(clone);
+    }
 
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
-    dots.forEach(dot => dot.classList.remove("active"));
-    if (dots[index]) dots[index].classList.add("active");
+    // Update total slide count after cloning
+    const totalSlides = slideCount + visibleSlides;
 
-    currentIndex = index;
-  }
+    function goToIndex(index, instant = false) {
+      track.style.transition = instant ? "none" : "transform 0.5s ease-in-out";
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
 
-  // Dot navigation
-  dots.forEach(dot => {
-    dot.addEventListener("click", function () {
-      const index = parseInt(this.dataset.index);
-      goToIndex(index);
+      // Update dots (wrap index to original slides only)
+      dots.forEach(dot => dot.classList.remove("active"));
+      if (dots[index % slideCount]) dots[index % slideCount].classList.add("active");
+
+      currentIndex = index;
+    }
+
+    function startAutoSlide() {
+      hoverInterval = setInterval(() => {
+        currentIndex++;
+        goToIndex(currentIndex);
+
+        // When reaching the clone slides, jump instantly to real start
+        if (currentIndex >= slideCount) {
+          setTimeout(() => {
+            goToIndex(0, true); // instantly jump
+          }, 500); // match transition duration
+          currentIndex = 0;
+        }
+      }, 3000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(hoverInterval);
+    }
+
+    // Dot navigation
+    dots.forEach(dot => {
+      dot.addEventListener("click", function () {
+        const index = parseInt(this.dataset.index);
+        goToIndex(index);
+        currentIndex = index;
+      });
     });
+
+    slider.addEventListener("mouseenter", startAutoSlide);
+    slider.addEventListener("mouseleave", stopAutoSlide);
+
+    // Start auto slide
+    startAutoSlide();
   });
-
-  function startAutoSlide() {
-    hoverInterval = setInterval(() => {
-      goToIndex((currentIndex + 1) % slideCount);
-    }, 3000);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(hoverInterval);
-  }
-
-  slider.addEventListener("mouseenter", startAutoSlide);
-  slider.addEventListener("mouseleave", stopAutoSlide);
 });
+
