@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slider.addEventListener("mouseleave", stopAutoSlide);
 
     // Start auto slide
-    startAutoSlide();
+   //  startAutoSlide();
   });
 });
 
