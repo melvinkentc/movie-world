@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
+    padding-top: 60px;
 }
 html {
   box-sizing: border-box;
@@ -14,7 +15,7 @@ html {
 #main {
   max-width: 1280px;
   margin: auto;
-  background: #eee;
+  background: #7a7979;
   padding: 10px;
   min-height: 100vh;
 }
@@ -26,6 +27,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #7e8491;
 }
 #navbarcontainer ul {
   list-style-type: none;
@@ -45,7 +47,7 @@ html {
   font-size: 1rem;
 }
 #navbarcontainer a:hover {
-  background: #dd0303;
+  background: #686464;
   color: #000000;
 }
 .icon {
@@ -86,8 +88,8 @@ html {
     height: 100vh;
     overflow: auto;
     max-width: 480px;
-    background: #f9f9f9;
-    border-right: 1px solid #000;
+    background: #9e9e9e;
+    border-right: 1px solid #ffffff00;
     transform: translateX(-100%);
     opacity: 0;
     /* transition:transform .5s ease-in-out,opacity .3s linear; allows menu to slide out slowly*/
@@ -164,7 +166,7 @@ body {
   background-color: #333;
 }
 .footer {
-  background: #000;
+  background: #7e8491;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -172,9 +174,37 @@ body {
   bottom: 0;
   width: 100%;
   display: block;
+  
 }
 .footer a {
-  color: #fff;
+  color: #7e8491;
   text-decoration: none;
   font-weight: bold;
 }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* ensures it stays above everything */
+  background-color: #7e8491;
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.shadow-title {
+  color: #000000;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
+}
+  .hr-shadow {
+    border: 0;
+    height: 2px;
+    width: 80%;
+    margin: 40px auto;
+    background: #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 1px;
+  }
