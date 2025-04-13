@@ -1,7 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const dateElement = document.getElementById("current-date");
-  const today = new Date();
-
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  dateElement.textContent = today.toLocaleDateString(undefined, options);
+document.addEventListener("DOMContentLoaded", function () {
+  const currentDateElement = document.getElementById("current-date");
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const today = new Date().toLocaleDateString(undefined, options);
+  currentDateElement.textContent = today;
 });
