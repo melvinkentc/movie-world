@@ -188,7 +188,7 @@ nav {
   width: 100%;
   z-index: 999; /* ensures it stays above everything */
   background-color: #7e8491;
-  color: #fff;
+  color: #000000;
   padding: 10px 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
