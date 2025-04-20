@@ -19,28 +19,28 @@
   <!-- Custom Scripts -->
   <script src="js/date.js"></script>
 </head>
-<body>
+<body style=" font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
   <div id="main">
     <nav>
       <div id="navbarcontainer">
         <img class="logo" src="images/logo.png" alt="Movie World" width="160" height="50" />
-        <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#nowshowing" target="_blank">Now Showing</a></li>
-          <li><a href="#comingsoon">Coming Soon</a></li>
-          <li><a href="#otherproducts">Other Products</a></li>
-          <li><a href="#bookingandevents">Booking and Events</a></li>
-          <li><a href="#contactus">Contact Us</a></li>
-          <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a></li>
-          <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+        <ul style="text-align: center;" >
+          <li><a href="#home" class="active" target="index.html">HOME</a></li>
+          <li><a href="#nowshowing" target="_blank">NOW SHOWING</a></li>
+          <li><a href="#comingsoon">COMING SOON</a></li>
+          <li><a href="#otherproducts">OTHER PRODUCTS</a></li>
+          <li><a href="#bookingandevents">BOOKING AND EVENTS</a></li>
+          <li><a href="#contactus">CONTACT US</a></li>
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</a></li>
+          <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
           <li>
             <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
-              <i class="fa fa-facebook-square" style="font-size:24px; padding-right: 1px;"></i> Facebook
+              <i class="fa fa-facebook-square" style="font-size:24px; padding-right: 1px;"></i>
             </a>
           </li>
           <li>
             <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
-              <i class="fa fa-twitter-square" style="font-size:24px; padding-right: 1px;"></i> Twitter
+              <i class="fa fa-twitter-square" style="font-size:24px; padding-right: 1px;"></i>
             </a>
           </li>
         </ul>        
@@ -50,7 +50,7 @@
       </div>
     </nav>
 
-    <p id="current-date" style="font-size: small;"></p>
+    <p id="current-date" style="font-size: small; font-weight: bold; text-transform: uppercase;"></p>
       <!-- Register Modal -->
       <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -113,7 +113,8 @@
       </div>
     <!-- Now Showing -->
     <section>
-      <h1 class="shadow-title" style="text-align: center;">Now Showing</h1>
+      <h1 class="shadow-title" style="text-align: center;">NOW SHOWING</h1>
+      <div class="ticket"><p style="text-align: center;" title="click poster to buy ticket">click poster to buy ticket</p></div>
       <div class="slider-container hover-slider">
         <div class="slider-track">
           <!-- Repeat these as needed -->
@@ -132,7 +133,8 @@
 
     <!-- Advance Ticket Selling -->
     <section>
-      <h1 class="shadow-title" style="text-align: center;">Advance Ticket Selling</h1>
+      <h1 class="shadow-title" style="text-align: center;">ADVANCE TICKET SELLING</h1>
+      <div class="ticket"><p style="text-align: center;"title="click poster to buy ticket">click poster to buy ticket</p></div>
       <div class="slider-container hover-slider">
         <div class="slider-track">
           <!-- Repeat slides -->
@@ -150,7 +152,8 @@
 
     <!-- Coming Soon -->
     <section>
-      <h1 class="shadow-title" style="text-align: center;">Coming Soon</h1>
+      <h1 class="shadow-title" style="text-align: center;"title="click poster to buy ticket">COMING SOON</h1>
+      <div class="ticket"><p style="text-align: center;">click poster to buy ticket</p></div>
       <div class="slider-container hover-slider">
         <div class="slider-track">
           <a href="#"><img src="images/amateur.gif" alt="1"></a>
