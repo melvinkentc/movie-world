@@ -193,6 +193,7 @@ nav {
   color: #000000;
   padding: 10px 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  
 }
 .shadow-title {
   color: #000000;
@@ -206,6 +207,8 @@ nav {
     height: 2px;
     width: 80%;
     margin: 40px auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
     background: #e0e0e0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 1px;
@@ -244,4 +247,8 @@ nav {
   
   .tooltip:hover .tooltiptext {
     visibility: visible;
+  }
+  .date {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
