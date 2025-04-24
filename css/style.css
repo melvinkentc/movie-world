@@ -190,7 +190,7 @@ nav {
   width: 100%;
   z-index: 999; /* ensures it stays above everything */
   background-color: #7e8491;
-  color: #fff;
+  color: #000000;
   padding: 10px 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
@@ -209,4 +209,39 @@ nav {
     background: #e0e0e0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 1px;
+  }
+  .ticket {
+    font-size: small;
+    color: red;
+      width: 150px;
+      height: 25px;
+      border: 3px solid red;
+      padding: 1px;
+      text-align: center;
+      margin: auto;
+    
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
   }
