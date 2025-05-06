@@ -16,7 +16,7 @@ html {
 
   margin: auto;
   background: silver;
-  padding: 10px;
+  padding: 10px 190px;
   min-height: 100vh;
 }
 .logo {
@@ -48,7 +48,7 @@ html {
   font-size: 1rem;
 }
 #navbarcontainer a:hover {
-  background: silver;
+  background: darkgray; /* background when hovered in desktop menu */
   color: #000000;
 }
 .icon {
@@ -134,7 +134,9 @@ body {
   font-family: sans-serif;
   background-color: #f8f8f8;
 }
-
+.active{
+  background-color: darkgray;
+}
 .slider-container {
   width: 100%;
   max-width: 880px;
@@ -266,8 +268,8 @@ nav {
   }
   .date {
     margin-top: 10px;
-    margin-left: 190px;
     margin-bottom: 10px;
     display: block;
     clear: both;
+    background-color: darkgray;
   }
