@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,48 +8,51 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- jQuery and Bootstrap JS -->
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-0o8e1c4a2b7f3d6e4c8f8a2b7f3d6e4c8f8a2b7f3d6e4c8f8a2b7f3d6e4c8" crossorigin="anonymous"></script> -->
 
   <!-- Custom Scripts -->
   <script src="js/date.js"></script>
 </head>
-<body style=" font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+<body style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin: 0;">
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div id="navbarcontainer">
+      <img class="logo" src="images/logo.png" alt="Movie World" width="160" height="50" />
+      <ul style="text-align: center;">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="nowshowing.html">NOW SHOWING</a></li>
+        <li><a href="comingsoon.html">COMING SOON</a></li>
+        <li><a href="otherproducts.html">OTHER PRODUCTS</a></li>
+        <li><a href="bookingandevents.html" class="active">BOOKING AND EVENTS</a></li>
+        <li><a href="contactus.html">CONTACT US</a></li>
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</a></li>
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
+        <li>
+          <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
+            <i class="fa fa-facebook-square" style="font-size:24px; padding-right: 1px;"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
+            <i class="fa fa-twitter-square" style="font-size:24px; padding-right: 1px;"></i>
+          </a>
+        </li>
+      </ul>
+      <button class="icon" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Date Bar (moved outside #main) -->
+  <p id="current-date" class="date"></p>
+
   <div id="main">
-    <nav>
-      <div id="navbarcontainer">
-        <img class="logo" src="images/logo.png" alt="Movie World" width="160" height="50" />
-        <ul style="text-align: center;" >
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="nowshowing.html">NOW SHOWING</a></li>
-          <li><a href="comingsoon.html">COMING SOON</a></li>
-          <li><a href="otherproducts.html">OTHER PRODUCTS</a></li>
-          <li><a href="bookingandevents.html" class="active">BOOKING AND EVENTS</a></li>
-          <li><a href="contactus.html">CONTACT US</a></li>
-          <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</a></li>
-          <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
-          <li>
-            <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
-              <i class="fa fa-facebook-square" style="font-size:24px; padding-right: 1px;"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
-              <i class="fa fa-twitter-square" style="font-size:24px; padding-right: 1px;"></i>
-            </a>
-          </li>
-        </ul>
-        <button class="icon" aria-label="Toggle menu">
-          <i class="fa fa-bars"></i>
-        </button>
-      </div>
-    </nav>
-    <p id="current-date" class="date" style="font-size: small; font-weight: bold; text-transform: uppercase;"></p>
     <!-- Register Modal -->
     <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -86,6 +88,7 @@
         </div>
       </div>
     </div>
+
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -113,32 +116,26 @@
         </div>
       </div>
     </div>
-    <!-- Now Showing -->
-   <section>
-    <div class="bookingandevents" id="bookingandevents">
-      <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Booking and Events</h1>
-      <hr class="hr-shadow" />
 
-            <h2 style="text-align: center;">Book your block screenings, cinema ads, product launches, press conferences, celebration parties, seminars and other corporate events or gatherings at Movieworld cinemas</h2>
-            <p>For Movieworld sales or booking inquiries, please email us at movieworld@robinsonsland.com with the following information:</p>
-            <ul style="list-style-type: none; padding-left: 0;">
-              <li>1. Your Name.</li>
-              <li>2. Your mobile number.</li>
-              <li>3. Your email address.</li>
-              <li>4. Movieworld branch you are interested in.</li>
-              <li>5. Type of event or booking (block screenings, cinema rentals, cinema ads, seminars, corporate events, or reservation inquiries)</li>
-              </ul>
-          </div>
-        </div>
+    <!-- Booking and Events Section -->
+    <section>
+      <div class="bookingandevents" id="bookingandevents">
+        <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Booking and Events</h1>
+        <hr class="hr-shadow" />
+        <h2 style="text-align: center;">Book your block screenings, cinema ads, product launches, press conferences, celebration parties, seminars and other corporate events or gatherings at Movieworld cinemas</h2>
+        <p>For Movieworld sales or booking inquiries, please email us at movieworld@robinsonsland.com with the following information:</p>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li>1. Your Name.</li>
+          <li>2. Your mobile number.</li>
+          <li>3. Your email address.</li>
+          <li>4. Movieworld branch you are interested in.</li>
+          <li>5. Type of event or booking (block screenings, cinema rentals, cinema ads, seminars, corporate events, or reservation inquiries)</li>
+        </ul>
       </div>
-
-    </div>
-
-   </section>
+    </section>
   </div>
 
-  <script src="js/myscript.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <!-- Footer -->
   <footer>
     <div class="footer">
       <p>Movie World &copy; 2025</p>
@@ -149,5 +146,9 @@
       </p>
     </div>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="js/myscript.js"></script>
 </body>
 </html>

@@ -10,47 +10,53 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- jQuery and Bootstrap JS -->
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-0o8e1c4a2b7f3d6e4c8f8a2b7f3d6e4c8f8a2b7f3d6e4c8f8a2b7f3d6e4c8" crossorigin="anonymous"></script> -->
 
   <!-- Custom Scripts -->
   <script src="js/date.js"></script>
 </head>
-<body style=" font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+
+<body style="margin: 0; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div id="navbarcontainer">
+      <img class="logo" src="images/logo.png" alt="Movie World" width="160" height="50" />
+      <ul style="text-align: center;">
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="nowshowing.html">NOW SHOWING</a></li>
+        <li><a href="comingsoon.html">COMING SOON</a></li>
+        <li><a href="otherproducts.html">OTHER PRODUCTS</a></li>
+        <li><a href="bookingandevents.html">BOOKING AND EVENTS</a></li>
+        <li><a href="contactus.html">CONTACT US</a></li>
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</a></li>
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
+        <li>
+          <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
+            <i class="fa fa-facebook-square" style="font-size:24px;"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
+            <i class="fa fa-twitter-square" style="font-size:24px;"></i>
+          </a>
+        </li>
+      </ul>
+      <button class="icon" aria-label="Toggle menu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Date Bar (Aligned below the Navbar) -->
+  <div class="date-bar">
+    <p id="current-date" class="date"></p>
+  </div>
+
+  <!-- Main Content -->
   <div id="main">
-    <nav>
-      <div id="navbarcontainer">
-        <img class="logo" src="images/logo.png" alt="Movie World" width="160" height="50" />
-        <ul style="text-align: center;" >
-          <li><a href="index.html" class="active">HOME</a></li>
-          <li><a href="nowshowing.html">NOW SHOWING</a></li>
-          <li><a href="comingsoon.html">COMING SOON</a></li>
-          <li><a href="otherproducts.html">OTHER PRODUCTS</a></li>
-          <li><a href="bookingandevents.html">BOOKING AND EVENTS</a></li>
-          <li><a href="contactus.html">CONTACT US</a></li>
-          <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</a></li>
-          <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
-          <li>
-            <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
-              <i class="fa fa-facebook-square" style="font-size:24px; padding-right: 1px;"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
-              <i class="fa fa-twitter-square" style="font-size:24px; padding-right: 1px;"></i>
-            </a>
-          </li>
-        </ul>
-        <button class="icon" aria-label="Toggle menu">
-          <i class="fa fa-bars"></i>
-        </button>
-      </div>
-    </nav>
-    <p id="current-date" class="date" style="font-size: small; font-weight: bold; text-transform: uppercase;"></p>
+
     <!-- Register Modal -->
     <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -86,6 +92,7 @@
         </div>
       </div>
     </div>
+
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -113,66 +120,54 @@
         </div>
       </div>
     </div>
-    <!-- Now Showing -->
+
+    <!-- Movie Sections -->
     <section>
+      <h1 class="shadow-title" style="text-align: center;">WHAT'S HAPPENING</h1>
       <hr class="hr-shadow" />
       <h1 class="shadow-title" style="text-align: center;">NOW SHOWING</h1>
-      <div class="ticket"><p style="text-align: center;" title="click poster to buy ticket">click poster to buy ticket</p></div>
+      <div class="ticket"><p style="text-align: center;">click poster to buy ticket</p></div>
       <div class="slider-container hover-slider">
         <div class="slider-track">
-          <!-- Repeat these as needed -->
           <a href="#"><img src="images/amateur.gif" alt="1"></a>
-          <!-- ... -->
         </div>
         <div class="dots">
-          <!-- Dynamic dots based on number of slides -->
           <span class="dot active" data-index="0"></span>
-          <!-- ... -->
         </div>
       </div>
     </section>
 
     <hr class="hr-shadow" />
 
-    <!-- Advance Ticket Selling -->
     <section>
       <h1 class="shadow-title" style="text-align: center;">ADVANCE TICKET SELLING</h1>
-      <div class="ticket"><p style="text-align: center;"title="click poster to buy ticket">click poster to buy ticket</p></div>
       <div class="slider-container hover-slider">
         <div class="slider-track">
-          <!-- Repeat slides -->
           <a href="#"><img src="images/amateur.gif" alt="1"></a>
-          <!-- ... -->
         </div>
         <div class="dots">
           <span class="dot active" data-index="0"></span>
-          <!-- ... -->
         </div>
       </div>
     </section>
 
     <hr class="hr-shadow" />
 
-    <!-- Coming Soon -->
     <section>
       <h1 class="shadow-title" style="text-align: center;">COMING SOON</h1>
-      <div class="ticket"><p style="text-align: center;"title="click poster to buy ticket" >click poster to buy ticket</p></div>
       <div class="slider-container hover-slider">
         <div class="slider-track">
           <a href="#"><img src="images/amateur.gif" alt="1"></a>
-          <!-- ... -->
         </div>
         <div class="dots">
           <span class="dot active" data-index="0"></span>
-          <!-- ... -->
         </div>
       </div>
-      <hr class="hr-shadow" />
     </section>
+
   </div>
 
-  <script src="js/myscript.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <!-- Footer -->
   <footer>
     <div class="footer">
       <p>Movie World &copy; 2025</p>
@@ -183,5 +178,14 @@
       </p>
     </div>
   </footer>
+  <div id="cookie-popup" class="cookie-popup">
+    <p>WE USE COOKIES!</p>
+    <br />
+    <p>By continuing to use the website, you will be agreeing to our <a href="policy.html" target="_blank" rel="noopener noreferrer" style="color: #4CAF50;">Privacy Policy</a>, <a href="policy.html" target="_blank" rel="noopener noreferrer" style="color: #4CAF50;">Terms and Conditions</a> and <a href="policy.html" target="_blank" rel="noopener noreferrer" style="color: #4CAF50;">Use of Cookies</a></p>
+    <button id="accept-cookies">Got it!</button>
+  </div>
+  <script src="js/myscript.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="js/cookie.js"></script>
 </body>
 </html>

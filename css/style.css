@@ -2,7 +2,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
-    padding-top: 60px;
+  background-color: #f8f8f8;
+  padding-top: 60px;
 }
 html {
   box-sizing: border-box;
@@ -13,44 +14,76 @@ html {
   box-sizing: inherit;
 }
 #main {
-
   margin: auto;
   background: silver;
   padding: 10px 190px;
   min-height: 100vh;
 }
-.logo {
-  padding-right: 30px;
+
+.logo-container {
+  text-align: center; /* Center the logo and date */
   padding-top: 10px;
 }
+
+.logo {
+  padding-right: 30px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  z-index: 999;
+  background-color: silver;
+  color: #000000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 0;
+}
+
 #navbarcontainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the group */
   align-items: center;
+  gap: 40px; /* Space between logo and menu */
+  height: 100%;
   background: silver;
+  padding: 0 20px;
 }
+
 #navbarcontainer ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   align-items: center;
-  gap: 0px;                                           
-  flex: 1 0 0%;
+  height: 100%;
 }
+
+#navbarcontainer li {
+  height: 100%;
+}
+
 #navbarcontainer a {
-  padding: 10px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 15px;
   color: #000000;
   text-decoration: none;
   font-size: 1rem;
+  transition: background 0.3s;
 }
+
 #navbarcontainer a:hover {
-  background: darkgray; /* background when hovered in desktop menu */
+  background: darkgray;
   color: #000000;
 }
+
 .icon {
   padding: 5px;
   margin: 0 1rem;
@@ -60,24 +93,30 @@ html {
   font-size: 2rem;
   cursor: pointer;
 }
+
 .icon .fa-times-circle,
 .icon span {
   position: fixed;
   left: -100vw;
 }
+
 .icon:hover {
   background: silver;
-}     
-.icon:focus {      
+}
+
+.icon:focus {
   outline: 1px dotted #ccc;
 }
+
 @media only screen and (max-width: 768px) {
   body.menu-open {
     overflow: hidden;
   }
+
   .icon {
     display: block;
   }
+
   #navbarcontainer ul {
     display: block;
     position: fixed;
@@ -87,40 +126,45 @@ html {
     padding-top: 4rem;
     width: 100%;
     height: 100vh;
-    overflow: auto;
     max-width: 480px;
+    overflow: auto;
     background: silver;
-    border-right: 1px solid #ffffff00;
     transform: translateX(-100%);
     opacity: 0;
-    /* transition:transform .5s ease-in-out,opacity .3s linear; allows menu to slide out slowly*/
   }
+
   .menu-open #navbarcontainer ul {
     transform: translateX(0);
     opacity: 1;
     box-shadow: 0 0 100vw rgba(0, 0, 0, 0.5);
     transition: transform 0.5s ease-in-out, opacity 0.3s linear;
   }
+
   #navbarcontainer li,
   #navbarcontainer a {
     background: silver;
   }
+
   #navbarcontainer li:first-child a {
     border-top: 1px solid #000;
   }
+
   #navbarcontainer a {
     border-bottom: 1px solid #000;
   }
+
   .menu-open .icon .fa-times-circle {
     position: fixed;
     z-index: 1000;
     left: 0.8rem;
     top: 0.8rem;
-  } 
-    #navbarcontainer a:hover {
-    background: darkgray; /* background when hovered in mobile menu */
-    color: black; /* optional: change text color on hover */
   }
+
+  #navbarcontainer a:hover {
+    background: darkgray;
+    color: black;
+  }
+
   .slider-container {
     padding-bottom: 10px;
   }
@@ -129,14 +173,11 @@ html {
     padding-left: 10px;
   }
 }
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #f8f8f8;
-}
-.active{
+
+.active {
   background-color: darkgray;
 }
+
 .slider-container {
   width: 100%;
   max-width: 880px;
@@ -144,7 +185,7 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   position: relative;
-  -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 .slider-track {
@@ -154,7 +195,7 @@ body {
 }
 
 .slider-track a {
-  flex: 0 0 auto; /* Don't shrink */
+  flex: 0 0 auto;
   margin: 0 5px;
 }
 
@@ -184,6 +225,7 @@ body {
 .dot.active {
   background-color: #333;
 }
+
 .footer {
   background: silver;
   color: #000000;
@@ -193,26 +235,15 @@ body {
   bottom: 0;
   width: 100%;
   display: block;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);   
-  
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
+
 .footer a {
   color: silver;
   text-decoration: none;
   font-weight: bold;
 }
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999; /* ensures it stays above everything */
-  background-color: inherit;
-  color: #000000;
-  padding: 10px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  
-}
+
 .shadow-title {
   color: #000000;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
@@ -220,56 +251,105 @@ nav {
   text-align: center;
   margin-top: 10px;
 }
-  .hr-shadow {
-    border: 0;
-    height: 2px;
-    width: 80%;
-    margin: 40px auto;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    background: #e0e0e0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 1px;
-  }
-  .ticket {
-    font-size: small;
-    color: red;
-      width: 150px;
-      height: 25px;
-      border: 3px solid red;
-      padding: 1px;
-      text-align: center;
-      margin: auto;
-    
-  }
 
-  .tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-  }
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-  
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
-  .date {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: block;
-    clear: both;
-    background-color: darkgray;
-  }
+.hr-shadow {
+  border: 0;
+  height: 2px;
+  width: 80%;
+  margin: 40px auto 10px;
+  background: #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 1px;
+}
+
+.ticket {
+  font-size: small;
+  color: red;
+  width: 150px;
+  height: 25px;
+  border: 3px solid red;
+  padding: 1px;
+  text-align: center;
+  margin: auto;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.date {
+  display: block;
+  background-color: darkgray;
+  margin-left: 190px; /* Align with the logo */
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px; /* padding to give some space from the edge */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.cookie-popup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  width: 280px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.cookie-popup p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cookie-popup a {
+  color: #4CAF50;
+  text-decoration: underline;
+}
+
+.cookie-popup button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cookie-popup button:hover {
+  background-color: #45a049;
+}
+
+.policy {
+  max-width: 600px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
