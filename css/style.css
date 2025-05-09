@@ -51,6 +51,7 @@ nav {
   height: 100%;
   background: silver;
   padding: 0 20px;
+  box-shadow: 0 1px 10px rgba(233, 232, 232, 0.5);
 }
 
 #navbarcontainer ul {
@@ -72,10 +73,10 @@ nav {
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 0 15px;
+  padding: 0 5px;
   color: #000000;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: small;
   transition: background 0.3s;
 }
 
@@ -289,6 +290,8 @@ nav {
   padding: 5px 0;
   position: absolute;
   z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .tooltip:hover .tooltiptext {
@@ -298,12 +301,12 @@ nav {
 .date {
   display: block;
   background-color: darkgray;
-  margin-left: 190px; /* Align with the logo */
   width: 100%;
   margin: 0;
   padding: 10px 20px; /* padding to give some space from the edge */
-  font-weight: bold;
   text-transform: uppercase;
+  font-size: small;
+  
 }
 
 .cookie-popup {
