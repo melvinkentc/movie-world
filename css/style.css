@@ -175,10 +175,15 @@ nav {
   }
 }
 
-.active {
-  background-color: darkgray;
+nav ul li a:hover {
+  background-color:darkgray;
 }
 
+/* Active Link */
+nav ul li a.active {
+  background-color: darkgray;
+
+}
 .slider-container {
   width: 100%;
   max-width: 880px;
@@ -230,20 +235,19 @@ nav {
 .footer {
   background: silver;
   color: #000000;
-  padding: 20px;
+  padding: 10px 20px;
   text-align: center;
   position: relative;
-  bottom: 0;
+  font-size: smaller;
   width: 100%;
-  display: block;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.footer a {
-  color: silver;
-  text-decoration: none;
-  font-weight: bold;
+.footer p {
+  margin: 0;
+  padding: 5px 0;
 }
+
 
 .shadow-title {
   color: #000000;
@@ -350,9 +354,33 @@ nav {
 }
 
 .policy {
-  max-width: 600px;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 50px auto; /* center horizontally with top/bottom margin */
+  padding: 0 20px;
+  background-color: transparent; /* or remove this line for default */
+  box-shadow: none;
+  border: none;
+  text-align: left;
+}
+.bookingandevents li {
+font-size: x-large;
+
+}
+.bookingandevents h2 {
+  font-size: xx-large;
+  text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+}
+.bookingandevents p {
+  margin-top: 40px;
+  font-size: x-large;
+  text-align: left;
+  
+}
+.contactusfilled {
+  font-weight: bold;
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 40px;
 }

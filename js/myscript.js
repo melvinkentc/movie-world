@@ -88,4 +88,16 @@ document.addEventListener("DOMContentLoaded", function () {
    //  startAutoSlide();
   });
 });
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Get all nav links
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  // Loop through links to find and add 'active'
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
 
