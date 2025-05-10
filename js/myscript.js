@@ -100,6 +100,72 @@ document.addEventListener("DOMContentLoaded", function () {
       link.classList.add("active");
     }
   });
+  //This is for contactus.html
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
 
-  
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Basic client-side validation
+    let isValid = true;
+
+    // Clear all previous error messages
+    document.querySelectorAll(".error-msg").forEach((el) => (el.style.display = "none"));
+
+    if (!name) {
+      document.getElementById("name-error").style.display = "block";
+      isValid = false;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.getElementById("email-error").style.display = "block";
+      isValid = false;
+    }
+
+    if (!/^09\d{9}$/.test(phone)) {
+      document.getElementById("phone-error").style.display = "block";
+      isValid = false;
+    }
+
+    if (!message) {
+      document.getElementById("message-error").style.display = "block";
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    // Submit via AJAX
+    try {
+      const formData = new FormData(form);
+      const response = await fetch("php/contact.php", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.text();
+
+      if (result.trim() === "success") {
+        // Show success modal
+        const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+        successModal.show();
+        form.reset();
+      } else {
+        // Show error modal
+        const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+        errorModal.show();
+      }
+    } catch (error) {
+      // Show error modal
+      const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+      errorModal.show();
+      console.error("Form submission error:", error);
+    }
+  });
+});
