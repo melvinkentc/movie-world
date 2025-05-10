@@ -248,6 +248,51 @@ nav ul li a.active {
   padding: 5px 0;
 }
 
+.footer-nav {
+  display: inline-block; /* Use inline-block for compact layout */
+  margin-top: 0;  /* Remove top margin */
+  margin-bottom: 5px; /* Remove bottom margin */
+}
+
+.footer-nav a {
+  color: #000;
+  text-decoration: none;
+  margin: 0;  /* No margin between links */
+  padding: 0;
+}
+
+.footer-nav a::after {
+  content: "|";
+  margin: 0 3px;
+  color: #333;
+}
+
+.footer-nav a:last-child::after {
+  content: ""; /* Remove trailing "|" */
+}
+
+.footer-nav a:hover {
+  color: #333; /* Dark gray on hover */
+  text-decoration: none;
+}
+
+/* Responsive: Stack links on mobile */
+@media (max-width: 480px) {
+  .footer-nav {
+    display: block;
+    margin-top: 0; /* Remove top margin for mobile */
+    margin-bottom: 0; /* Remove bottom margin for mobile */
+  }
+
+  .footer-nav a {
+    display: block;
+    margin: 0;  /* No space between links on mobile */
+  }
+
+  .footer-nav a::after {
+    content: ""; /* Remove "|" on mobile */
+  }
+}
 
 .shadow-title {
   color: #000000;
@@ -383,4 +428,72 @@ font-size: x-large;
   font-size: xx-large;
   text-align: center;
   margin-top: 40px;
+}
+.dropdown-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.dropdown {
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.dropdown button {
+  width: 100%;
+  background-color: #363636;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown button:hover {
+  background-color: rgb(82, 80, 80);
+}
+
+.dropdown-content {
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+  padding: 0 20px;
+  border-top: 1px solid #ddd;
+  font-size: smaller;
+}
+
+.dropdown-content.open {
+  padding: 15px 20px;
+}
+
+.dropdown-content p {
+  margin: 0;
+  padding: 15px 0;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.arrow {
+  font-size: 14px;
+  color: white;
+}
+
+.title {
+  font-weight: bold;
+  color: white;
+  flex-grow: 1;
 }
