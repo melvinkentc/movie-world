@@ -1,25 +1,33 @@
 <?php
+// register.php
+
+// Database connection
 $conn = new mysqli("localhost", "root", "", "db_movieworld");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$fullname = $_POST['fullname'];
-$username = $_POST['username'];
-$email = $_POST['email'];
+// Get form data and sanitize
+$fullname = trim($_POST['fullname']);
+$username = trim($_POST['username']);
+$email = trim($_POST['email']);
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // hash password
 
-$sql = "INSERT INTO users (fullname, username, email, password) VALUES (?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
+// Prepare and bind
+$stmt = $conn->prepare("INSERT INTO users (fullname, username, email, password) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("ssss", $fullname, $username, $email, $password);
 
 if ($stmt->execute()) {
-    echo "Registration successful!";
-    // You can redirect to login or homepage
-    // header("Location: ../index.html");
+    echo "<script>
+        alert('Registration successful!');
+        window.location.href = '/movie-world/index.php';
+    </script>";
 } else {
-    echo "Error: " . $stmt->error;
+    echo "<script>
+        alert('Error: " . $stmt->error . "');
+        window.history.back();
+    </script>";
 }
 
 $stmt->close();

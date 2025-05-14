@@ -579,3 +579,28 @@ textarea.invalid {
     font-size: 15px;
   }
 }
+/* New style for the username on the right */
+#navbarcontainer .username {
+  margin-left: auto; /* Pushes it to the right */
+  font-size: small;
+  color: #000;
+  padding-right: 20px; /* Space from the right edge */
+  display: flex;
+  align-items: center;
+}
+
+#navbarcontainer .username span {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Optional: Add a logout link next to the username */
+#navbarcontainer .username a {
+  color: #000;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+#navbarcontainer .username a:hover {
+  color: darkgray;
+}

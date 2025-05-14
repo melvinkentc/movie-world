@@ -1,34 +1,44 @@
 <?php
 session_start();
+
+// Database connection
 $conn = new mysqli("localhost", "root", "", "db_movieworld");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$username = $_POST['username'];
+// Sanitize input
+$username = trim($_POST['username']);
 $password = $_POST['password'];
 
-$sql = "SELECT id, password FROM users WHERE username = ?";
-$stmt = $conn->prepare($sql);
+// Check if user exists
+$stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
-$stmt->store_result();
+$result = $stmt->get_result();
 
-if ($stmt->num_rows > 0) {
-    $stmt->bind_result($id, $hashed_password);
-    $stmt->fetch();
+if ($result && $result->num_rows === 1) {
+    $user = $result->fetch_assoc();
 
-    if (password_verify($password, $hashed_password)) {
-        $_SESSION['user_id'] = $id;
-        echo "Login successful!";
-        // Redirect to dashboard
-        // header("Location: ../dashboard.php");
+    // Verify password
+    if (password_verify($password, $user['password'])) {
+        $_SESSION['username'] = $user['username'];
+        header("Location: ../index.php");
+        exit;
     } else {
-        echo "Invalid password.";
+        // Incorrect password
+        $_SESSION['login_error'] = "Incorrect password.";
+        $_SESSION['login_error_shown'] = true;
+        header("Location: ../index.php");
+        exit;
     }
 } else {
-    echo "User not found.";
+    // Username not found
+    $_SESSION['login_error'] = "Username not found.";
+    $_SESSION['login_error_shown'] = true;
+    header("Location: ../index.php");
+    exit;
 }
 
 $stmt->close();

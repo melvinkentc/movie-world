@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $password = ''; // your DB password
-$dbname = 'movieworld';
+$dbname = 'db_movieworld';
 
 // Create DB connection
 $conn = new mysqli($host, $user, $password, $dbname);
