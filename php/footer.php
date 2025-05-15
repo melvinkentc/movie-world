@@ -25,8 +25,8 @@
 
 <div id="cookie-popup" class="cookie-popup">
   <p>WE USE COOKIES!</p><br />
-  <p>By continuing to use the website, you agree to our <a href="policy.html">Privacy Policy</a>,
-  <a href="termsandcondition.html">Terms</a> and <a href="policy.html">Use of Cookies</a></p>
+  <p>By continuing to use the website, you agree to our <a href="policy.php">Privacy Policy</a>,
+  <a href="termsandcondition.php">Terms</a> and <a href="policy.php">Use of Cookies</a></p>
   <button id="accept-cookies">Got it!</button>
 </div>
 <script src="js/myscript.js"></script>

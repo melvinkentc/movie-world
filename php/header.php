@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css">
   <!-- Font Awesome for social icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-FontAwesomeHashHere==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="js/date.js"></script> <!-- Include date.js in the header -->
 </head>
@@ -31,25 +32,28 @@
         <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</a></li>
         <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
       <?php endif; ?>
-
-      <li>
-        <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
-          <i class="fa fa-facebook-square" style="font-size:24px; padding-right: 1px;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
-          <i class="fa fa-twitter-square" style="font-size:24px; padding-right: 1px;"></i>
-        </a>
-      </li>
     </ul>
-
     <!-- Hamburger Icon for Mobile -->
     <button class="icon" aria-label="Toggle menu">
-      <i class="fa fa-bars"></i>
+      <i class="fas fa-bars"></i>
     </button>
   </div>
 </nav>
-
 <!-- Include Modals -->
 <?php include 'php/modals.php'; ?>
+
+<div id="date-and-icons">
+  <p id="current-date" class="date"></p>
+  <ul>
+    <li>
+      <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
+        <i class="fab fa-facebook-square" style="font-size:24px;"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
+        <i class="fab fa-twitter-square" style="font-size:24px;"></i>
+      </a>
+    </li>
+  </ul>
+</div>

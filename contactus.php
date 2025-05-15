@@ -82,5 +82,5 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
 <?php include 'php/footer.php'; ?>
 <script src="js/modals.js"></script>
 <script src="js/date.js"></script>
-<script src="js/contactform.js"></script> <!-- optional custom validation -->
+<script src="js/contactform.js"></script>
 <?php include 'php/login_error_handler.php'; ?>

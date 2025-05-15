@@ -50,10 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
     let hoverInterval;
 
-    // Clone first few slides and append them
-    for (let i = 0; i < visibleSlides; i++) {
-      const clone = slides[i].cloneNode(true);
-      track.appendChild(clone);
+    // Clone first few slides and append them, check if slides exist before cloning
+    if (slides && slides.length > 0) {
+      for (let i = 0; i < visibleSlides; i++) {
+        const clone = slides[i].cloneNode(true);
+        track.appendChild(clone);
+      }
     }
 
     // Update total slide count after cloning
@@ -105,19 +107,21 @@ document.addEventListener("DOMContentLoaded", function () {
    //  startAutoSlide();
   });
 });
-  const currentPage = window.location.pathname.split("/").pop();
 
-  // Get all nav links
-  const navLinks = document.querySelectorAll("nav ul li a");
+const currentPage = window.location.pathname.split("/").pop();
 
-  // Loop through links to find and add 'active'
-  navLinks.forEach(link => {
-    const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-    }
-  });
-  //This is for contactus.html
+// Get all nav links
+const navLinks = document.querySelectorAll("nav ul li a");
+
+// Loop through links to find and add 'active'
+navLinks.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+
+//This is for contactus.html
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
 
@@ -186,3 +190,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownButtons = document.querySelectorAll('.dropdown button');
+  dropdownButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      toggleDropdown(button);
+    });
+  });
+});
+
+function toggleDropdown(clickedButton) {
+  const allButtons = document.querySelectorAll(".dropdown button");
+  const allContents = document.querySelectorAll(".dropdown-content");
+
+  allButtons.forEach(button => {
+    if (button !== clickedButton) {
+      button.classList.remove("active");
+      const arrow = button.querySelector(".arrow");
+      if (arrow) arrow.textContent = "▶";
+    }
+  });
+
+  allContents.forEach(content => {
+    if (content !== clickedButton.nextElementSibling) {
+      content.style.maxHeight = null;
+      content.classList.remove("open");
+    }
+  });
+
+  const isActive = clickedButton.classList.toggle("active");
+  const arrow = clickedButton.querySelector(".arrow");
+  const content = clickedButton.nextElementSibling;
+
+  if (isActive) {
+    content.classList.add("open");
+    content.style.maxHeight = content.scrollHeight + "px";  // Use scrollHeight for smooth opening
+    if (arrow) arrow.textContent = "▼";
+  } else {
+    content.classList.remove("open");
+    content.style.maxHeight = null;
+    if (arrow) arrow.textContent = "▶";
+  }
+}

@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
-  background-color: #f8f8f8;
+  background-color: silver;
   padding-top: 60px;
 }
 html {
@@ -347,16 +347,6 @@ nav ul li a.active {
   visibility: visible;
 }
 
-.date {
-  display: block;
-  background-color: darkgray;
-  width: 100%;
-  margin: 0;
-  padding: 10px 20px; /* padding to give some space from the edge */
-  text-transform: uppercase;
-  font-size: small;
-  
-}
 
 .cookie-popup {
   display: none;
@@ -429,20 +419,17 @@ font-size: x-large;
   text-align: center;
   margin-top: 40px;
 }
-.dropdown-container {
-  max-width: 900px;
-  margin: auto;
-}
-
+/* Basic Dropdown Styles */
 .dropdown {
   margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: silver; /* Match background with page */
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+/* Dropdown Button Styles */
 .dropdown button {
   width: 100%;
   background-color: #363636;
@@ -460,33 +447,30 @@ font-size: x-large;
   transition: background-color 0.3s ease;
 }
 
+/* Hover Effect for Dropdown Button */
 .dropdown button:hover {
   background-color: rgb(82, 80, 80);
 }
 
+/* Initially Hidden Dropdown Content */
 .dropdown-content {
   background-color: white;
   color: black;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease-out;
   padding: 0 20px;
   border-top: 1px solid #ddd;
   font-size: smaller;
 }
 
+/* Expanded Dropdown Content */
 .dropdown-content.open {
   padding: 15px 20px;
+  max-height: 1000px; /* Adjust this to a high number so the transition works smoothly */
 }
 
-.dropdown-content p {
-  margin: 0;
-  padding: 15px 0;
-  line-height: 1.5;
-  word-wrap: break-word;
-  white-space: normal;
-}
-
+/* Arrow Icon */
 .arrow {
   font-size: 14px;
   color: white;
@@ -603,4 +587,39 @@ textarea.invalid {
 
 #navbarcontainer .username a:hover {
   color: darkgray;
+}
+#date-and-icons {
+  display: flex;
+  align-items: center;  /* Vertically align the date and icons */
+  justify-content: flex-start;  /* Align content to the left */
+  background-color: darkgray;  /* Common background color for both date and icons */
+  padding: 0px 10px;  /* Add padding for spacing */
+  padding-left: 420px;  /* Adjust space from left side */
+}
+
+.date {
+  margin: 0;  /* Remove default margin from <p> */
+  font-size: 14px;  /* Smaller font size for the date */
+  color: rgb(0, 0, 0);  /* Date text color (black) */
+}
+
+#date-and-icons ul {
+  display: flex;  /* Flex container for the icons */
+  list-style: none;  /* Remove bullet points from the list */
+  margin: 0;
+  padding: 0;
+}
+
+#date-and-icons ul li {
+  margin: 5px;  /* Remove margin between icons */
+}
+
+#date-and-icons a {
+  text-decoration: none;
+}
+
+#date-and-icons i {
+  font-size: 24px;  /* Set icon size */
+  color: black;  /* Set icon color to black */
+  background: transparent;  /* No background color for icons */
 }
