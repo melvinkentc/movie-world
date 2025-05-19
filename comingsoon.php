@@ -7,13 +7,24 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
 <!-- Include Header -->
 <?php include 'php/header.php'; ?>
 
-<!-- Main Content -->
 <div id="main">
-    <section>
-        <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Coming Soon</h1>
-        <hr class="hr-shadow" />
-    </section>
+  <section>
+    <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Coming Soon</h1>
+    <hr class="hr-shadow" />
+    
+    <!-- Add your dynamic or static movie listings below -->
+    <div class="movie-grid">
+      <div class="movie-card">
+        <img src="images/amateur.gif" alt="Movie Poster">
+        <h5>Sample Movie</h5>
+        <p>Now in theaters!</p>
+      </div>
+
+      <!-- Duplicate or loop over this structure if loading dynamically -->
+    </div>
+  </section>
 </div>
+
 
 <!-- Include Modals -->
 <?php include 'php/modals.php'; ?>

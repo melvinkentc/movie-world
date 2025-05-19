@@ -6,8 +6,6 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
 
 <?php include 'php/header.php'; ?>
 
-<p id="current-date" class="date"></p>
-
 <!-- Main Content -->
 <div id="main">
   <section>

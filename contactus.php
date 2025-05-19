@@ -6,8 +6,6 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
 
 <?php include 'php/header.php'; ?>
 
-<p id="current-date" class="date"></p>
-
 <!-- Main Content -->
 <div id="main">
   <section>
@@ -18,7 +16,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
 
     <p class="contactusfilled">Please fill out the required fields</p>
 
-    <form id="contact-form">
+    <form id="contact-form" action="php/contactform_submit.php" method="POST">
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Your full name" required />
@@ -48,7 +46,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
   </section>
 </div>
 
-<!-- Optional Modals for Feedback -->
+<!-- Success Modal -->
 <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center p-4">
@@ -64,6 +62,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
   </div>
 </div>
 
+<!-- Error Modal -->
 <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center p-4">
@@ -80,6 +79,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
 </div>
 
 <?php include 'php/footer.php'; ?>
+
 <script src="js/modals.js"></script>
 <script src="js/date.js"></script>
 <script src="js/contactform.js"></script>

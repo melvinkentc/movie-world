@@ -5,13 +5,21 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
 ?>
 <?php include 'php/header.php'; ?>
 
-<!-- Main Content -->
 <div id="main">
   <section>
-    <h1 class="shadow-title" style="text-align: center;">Other Products</h1>
+    <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Other Products</h1>
     <hr class="hr-shadow" />
-    <p style="text-align: center;">Explore our wide range of products and merchandise!</p>
-    <!-- Add content here -->
+    
+    <!-- Add your dynamic or static movie listings below -->
+    <div class="movie-grid">
+      <div class="movie-card">
+        <img src="images/amateur.gif" alt="Movie Poster">
+        <h5>Sample Movie</h5>
+        <p>Now in theaters!</p>
+      </div>
+
+      <!-- Duplicate or loop over this structure if loading dynamically -->
+    </div>
   </section>
 </div>
 

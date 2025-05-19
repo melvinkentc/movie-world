@@ -42,18 +42,25 @@
 <!-- Include Modals -->
 <?php include 'php/modals.php'; ?>
 
-<div id="date-and-icons">
-  <p id="current-date" class="date"></p>
-  <ul>
-    <li>
-      <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
-        <i class="fab fa-facebook-square" style="font-size:24px;"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
-        <i class="fab fa-twitter-square" style="font-size:24px;"></i>
-      </a>
-    </li>
-  </ul>
+<div id="date-bar-wrapper">
+  <div id="date-and-icons">
+    <p id="current-date" class="date"></p>
+    <ul>
+      <li>
+        <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
+          <i class="fab fa-facebook-square" style="font-size:24px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
+          <i class="fab fa-twitter-square" style="font-size:24px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/melvinkentc" target="_blank" id="instagram">
+          <i class="fab fa-instagram-square" style="font-size:24px;"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
