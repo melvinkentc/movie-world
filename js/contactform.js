@@ -1,50 +1,92 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contact-form');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
 
-  if (!form) return;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-    // Grab the form field values
-    const name = form.querySelector('#name').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const phone = form.querySelector('#phone').value.trim();
-    const message = form.querySelector('#message').value.trim();
+    // Basic client-side validation
+    let isValid = true;
 
-    // Simple frontend validation
-    if (!name || !email || !phone || !message) {
-      const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
-      errorModal.show();
-      console.warn('Validation failed: Missing fields.');
-      return;
+    // Clear all previous error messages
+    document.querySelectorAll(".error-msg").forEach((el) => (el.style.display = "none"));
+
+    if (!name) {
+      document.getElementById("name-error").style.display = "block";
+      isValid = false;
     }
 
-    // Prepare form data
-    const formData = new FormData(form);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.getElementById("email-error").style.display = "block";
+      isValid = false;
+    }
 
-    // Send the data using fetch
-    fetch(form.action, {
-      method: 'POST',
-      body: formData
-    })
-      .then(res => res.text())
-      .then(response => {
-        console.log("Server Response:", response); // Debugging line to inspect the server's response
+    if (!/^09\d{9}$/.test(phone)) {
+      document.getElementById("phone-error").style.display = "block";
+      isValid = false;
+    }
 
-        // Check for success or failure
-        if (response.trim() === 'success') {
-          const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-          successModal.show();
-          form.reset(); // Clear form fields
-        } else {
-          throw new Error(response); // If not success, throw an error with the response
-        }
-      })
-      .catch(err => {
-        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
-        errorModal.show();
-        console.error('Submission failed:', err);
+    if (!message) {
+      document.getElementById("message-error").style.display = "block";
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    // Submit via AJAX
+    try {
+      const formData = new FormData(form);
+      const response = await fetch("php/contactform_submit.php", {
+        method: "POST",
+        body: formData,
       });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        // Show success modal
+        const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+        successModal.show();
+        form.reset();
+
+        // When modal hidden, remove backdrop and restore scrolling
+        document.getElementById("successModal").addEventListener("hidden.bs.modal", () => {
+          removeModalBackdrop();
+        }, { once: true });
+
+      } else {
+        // Show error modal
+        const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+        errorModal.show();
+
+        document.getElementById("errorModal").addEventListener("hidden.bs.modal", () => {
+          removeModalBackdrop();
+        }, { once: true });
+      }
+    } catch (error) {
+      // Show error modal
+      const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+      errorModal.show();
+
+      document.getElementById("errorModal").addEventListener("hidden.bs.modal", () => {
+        removeModalBackdrop();
+      }, { once: true });
+
+      console.error("Form submission error:", error);
+    }
   });
+
+  // Helper to remove leftover modal backdrop and restore scrolling
+  function removeModalBackdrop() {
+    const backdrop = document.querySelector(".modal-backdrop");
+    if (backdrop) {
+      backdrop.parentNode.removeChild(backdrop);
+    }
+    document.body.classList.remove("modal-open");
+  }
 });

@@ -1,3 +1,5 @@
+<?php include_once 'php/session_check.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +8,9 @@
   <title>Movie World</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css">
-  <!-- Font Awesome for social icons -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-FontAwesomeHashHere==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="js/date.js"></script> <!-- Include date.js in the header -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
 <nav>
   <div id="navbarcontainer">
     <img class="logo" src="images/logo.png" alt="Movie World" width="160" height="50" />
@@ -34,7 +32,7 @@
       <?php endif; ?>
     </ul>
     <!-- Hamburger Icon for Mobile -->
-    <button class="icon" aria-label="Toggle menu">
+  <button class="icon" id="menuToggle" aria-label="Toggle menu">
       <i class="fas fa-bars"></i>
     </button>
   </div>

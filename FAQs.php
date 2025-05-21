@@ -1,202 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include 'php/header.php'; // header already starts the session and sets $isLoggedIn/$username
+?>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movie World</title>
+<!-- Main Content -->
+<div id="main">
+    <section>
+        <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Frequently Asked Questions</h1>
+        <hr class="hr-shadow" />
+        <div class="faq-section" style="padding: 40px 20px; max-width: 900px; margin: auto;">
+            <div class="faq-item" style="margin-bottom: 25px;">
+                <h4>1. What type of credit cards are accepted for online purchase of tickets?</h4>
+                <p>Visa and Mastercard cards are accepted.</p>
+            </div>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <div class="faq-item" style="margin-bottom: 25px;">
+                <h4>2. Can I purchase tickets for somebody?</h4>
+                <p>Yes. Simply encode the name of the moviegoer in the box provided. A valid ID, photocopy of the credit card used, voucher print out or SMS, Transaction ID, and Receipt ID shall be requested to be presented upon redemption of cinema ticket.</p>
+            </div>
 
-  <!-- CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+            <div class="faq-item" style="margin-bottom: 25px;">
+                <h4>3. How do I check if I have successfully purchased my ticket/s?</h4>
+                <p>A confirmation voucher with Transaction ID and Receipt ID will be provided after a successful transaction. The same confirmation page (voucher) shall be forwarded when you fill in the email address box.</p>
+            </div>
 
-  <!-- jQuery and Bootstrap JS -->
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-0o8e1c4a2b7f3d6e4c8f8a2b7f3d6e4c8f8a2b7f3d6e4c8f8a2b7f3d6e4c8" crossorigin="anonymous"></script> -->
+            <div class="faq-item" style="margin-bottom: 25px;">
+                <h4>4. Do I need to print my voucher?</h4>
+                <p>You have the option to either print the voucher for presentation, or simply present the SMS confirmation at the respective cinema porter to claim movie tickets.</p>
+            </div>
 
-  <!-- Custom Scripts -->
-  <script src="js/date.js"></script>
-</head>
-<body>
+            <div class="faq-item" style="margin-bottom: 25px;">
+                <h4>5. Can I refund / cancel online purchase ticket?</h4>
+                <p>Movie tickets purchased via the service are strictly non-cancelable and are not available for exchange under any circumstances. Refunds will be provided only if the movie is cancelled/rescheduled, or if the cinema will not be operating on the stated date.</p>
+            </div>
 
-    <nav>
-      <div id="navbarcontainer">
-        <img class="logo" src="images/logo.png" alt="Movie World" width="160" height="50" />
-        <ul style="text-align: center;" >
-          <li><a href="index.html" >HOME</a></li>
-          <li><a href="nowshowing.html">NOW SHOWING</a></li>
-          <li><a href="advanceticketselling.html">ADVANCE TICKET SELLING</a></li>
-          <li><a href="comingsoon.html">COMING SOON</a></li>
-          <li><a href="otherproducts.html">OTHER PRODUCTS</a></li>
-          <li><a href="bookingandevents.html">BOOKING AND EVENTS</a></li>
-          <li><a href="contactus.html">CONTACT US</a></li>
-          <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</a></li>
-          <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
-          <li>
-            <a href="https://www.facebook.com/melvinkentc" target="_blank" id="facebook">
-              <i class="fa fa-facebook-square" style="font-size:24px; padding-right: 1px;"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/melvinkentc" target="_blank" id="twitter">
-              <i class="fa fa-twitter-square" style="font-size:24px; padding-right: 1px;"></i>
-            </a>
-          </li>
-        </ul>
-        <button class="icon" aria-label="Toggle menu">
-          <i class="fa fa-bars"></i>
-        </button>
-      </div>
-    </nav>
-    <p id="current-date" class="date"></p>
-    <div id="main">
-    <!-- Register Modal -->
-    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="registerModalLabel">Register</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form method="post" action="php/register.php">
-              <div class="mb-3">
-                <label class="form-label">Fullname</label>
-                <input type="text" name="fullname" class="form-control" placeholder="Fullname" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" placeholder="Username" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" placeholder="Email" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success">Save</button>
-              </div>
-            </form>
-          </div>
+            <div class="faq-item" style="margin-bottom: 25px;">
+                <h4>6. Can I purchase tickets for the following day?</h4>
+                <p>Yes. But note that the movie schedule is subject to change without prior notice.</p>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 25px;">
+                <h4>7. Where can I find the ticket price?</h4>
+                <p>Ticket prices can be viewed in the <a href="nowshowing.html">Now Showing</a> section of our website.</p>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 25px;">
+                <h4>8. What does the MTRCB film classification stand for?</h4>
+                <ul style="padding-left: 20px;">
+                    <li><strong>GP:</strong> General Patronage – Movie is suitable for all ages</li>
+                    <li><strong>PG13:</strong> Parental Guidance – Recommended for children under 12 years</li>
+                    <li><strong>R13:</strong> Rated 13 – Only ages 13 and up allowed entry</li>
+                    <li><strong>R16:</strong> Rated 16 – Only ages 16 and up allowed entry</li>
+                    <li><strong>R18:</strong> Rated 18 – Only ages 18 and up allowed entry</li>
+                </ul>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 25px;">
+                <h4>9. How do I redeem my movie ticket?</h4>
+                <p>To redeem your movie ticket, simply present your voucher print out or SMS confirmation at the respective cinema porter.</p>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form method="post" action="php/login.php">
-              <div class="mb-3">
-                <label class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" placeholder="Username" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Login</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Now Showing -->
-             <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Frequently Asked Questions</h1>
-    <hr class="hr-shadow" />
-   <section class="faq-section" style="padding: 40px 20px; max-width: 900px; margin: auto;">
+    </section>
+</div>
 
-  <div class="faq-item" style="margin-bottom: 25px;">
-    <h4>1. What type of credit cards are accepted for online purchase of tickets?</h4>
-    <p>Visa and Mastercard cards are accepted.</p>
-  </div>
+<?php include 'php/footer.php'; ?>
 
-  <div class="faq-item" style="margin-bottom: 25px;">
-    <h4>2. Can I purchase tickets for somebody?</h4>
-    <p>Yes. Simply encode the name of the moviegoer in the box provided. A valid ID, photocopy of the credit card used, voucher print out or SMS, Transaction ID and Receipt ID shall be requested to be presented upon redemption of cinema ticket.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom: 25px;">
-    <h4>3. How do I check if I have successfully purchased my ticket/s?</h4>
-    <p>A confirmation voucher with Transaction ID and Receipt ID will be provided after a successful transaction. The same confirmation page (voucher) shall be forwarded when you fill in the email address box.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom: 25px;">
-    <h4>4. Do I need to print my voucher?</h4>
-    <p>You have the option to either print the voucher for presentation, or simply present the SMS confirmation at the respective cinema porter to claim movie tickets.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom: 25px;">
-    <h4>5. Can I refund / cancel online purchase ticket?</h4>
-    <p>Movie tickets purchased via the service are strictly non-cancelable and are not available for exchange under any circumstances. Refunds will be provided only if the movie is cancelled/rescheduled, or if the cinema will not be operating on the stated date.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom: 25px;">
-    <h4>6. Can I purchase tickets for the following day?</h4>
-    <p>Yes. But note that the movie schedule is subject to change without prior notice.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom: 25px;">
-    <h4>7. Where can I find the ticket price?</h4>
-    <p>Ticket prices can be viewed in the <a href="nowshowing.html">Now Showing</a> section of our website.</p>
-  </div>
-
-  <div class="faq-item" style="margin-bottom: 25px;">
-    <h4>8. What does the MTRCB film classification stand for?</h4>
-    <ul style="padding-left: 20px;">
-      <li><strong>GP:</strong> General Patronage – Movie is suitable for all ages</li>
-      <li><strong>PG13:</strong> Parental Guidance – Recommended for children under 12 years</li>
-      <li><strong>R13:</strong> Rated 13 – Only ages 13 and up allowed entry</li>
-      <li><strong>R16:</strong> Rated 16 – Only ages 16 and up allowed entry</li>
-      <li><strong>R18:</strong> Rated 18 – Only ages 18 and up allowed entry</li>
-    </ul>
-  </div>
-
-  <div class="faq-item" style="margin-bottom: 25px;">
-    <h4>9. How do I redeem my movie ticket?</h4>
-    <p>To redeem your movie ticket, simply present your voucher print out or SMS confirmation at the respective cinema porter.</p>
-  </div>
-</section>
-  </div>
-
-  <script src="js/myscript.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-<footer>
-  <div class="footer">
-    <p>
-      Movie World &copy; 2025<br />
-
-      <!-- Inserted footer nav here -->
-      <div class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="nowshowing.html">Now Showing</a>
-        <a href="advanceticketselling.html">Advance Ticket Selling</a>
-        <a href="comingsoon.html">Coming Soon</a>
-        <a href="termsandcondition.html">Terms and Conditions</a>
-        <a href="FAQs.html">FAQs</a>
-        <a href="policy.html">Privacy and Policy</a>
-      </div>
-      <br />
-
-      Trademark and Copyright Notice:
-      &reg; and &copy; Movie World and its related entities. All rights reserved.<br />
-      Use of this Website assumes acceptance of Terms of Use and Privacy Policy.
-    </p>
-  </div>
-</footer>
-</body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/modals.js"></script>
+<script src="js/date.js"></script>
+<?php include 'php/login_error_handler.php'; ?>

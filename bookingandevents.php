@@ -1,11 +1,6 @@
 <?php
-session_start();
-$isLoggedIn = isset($_SESSION['username']);
-$username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
+include 'php/header.php'; // header already starts the session and sets $isLoggedIn/$username
 ?>
-
-<!-- Include Header -->
-<?php include 'php/header.php'; ?> 
 
 <!-- Main Content -->
 <div id="main">
