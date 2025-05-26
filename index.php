@@ -4,12 +4,11 @@ include 'php/header.php'; // header already starts the session and sets $isLogge
 <!-- Main Content -->
 <div id="main">
     <section>
-      <h1 class="shadow-title" style="text-align: center;">WHAT'S HAPPENING</h1>
-      <p style="text-align: center;">Your one-stop destination for all things movies!</p>
+      <h1 class="titles" style="text-align: center;">WHAT'S HAPPENING</h1>
 </section>
     <section>
       <hr class="hr-shadow" />
-      <h1 class="shadow-title" style="text-align: center;">NOW SHOWING</h1>
+      <h1 class="titles" style="text-align: center;">NOW SHOWING</h1>
       <div class="ticket"><p style="text-align: center;" title="click poster to buy ticket">click poster to buy ticket</p></div>
       <div class="slider-container hover-slider">
         <div class="slider-track">
@@ -29,8 +28,7 @@ include 'php/header.php'; // header already starts the session and sets $isLogge
 
     <!-- Advance Ticket Selling -->
     <section>
-      <h1 class="shadow-title" style="text-align: center;">ADVANCE TICKET SELLING</h1>
-      <div class="ticket"><p style="text-align: center;"title="click poster to buy ticket">click poster to buy ticket</p></div>
+      <h1 class="titles" style="text-align: center;">ADVANCE TICKET SELLING</h1>
       <div class="slider-container hover-slider">
         <div class="slider-track">
           <!-- Repeat slides -->
@@ -48,8 +46,7 @@ include 'php/header.php'; // header already starts the session and sets $isLogge
 
     <!-- Coming Soon -->
     <section>
-      <h1 class="shadow-title" style="text-align: center;">COMING SOON</h1>
-      <div class="ticket"><p style="text-align: center;"title="click poster to buy ticket" >click poster to buy ticket</p></div>
+      <h1 class="titles" style="text-align: center;">COMING SOON</h1>
       <div class="slider-container hover-slider">
         <div class="slider-track">
           <a href="#"><img src="images/amateur.gif" alt="1"></a>

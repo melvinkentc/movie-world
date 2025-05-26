@@ -5,7 +5,7 @@ include 'php/header.php'; // header already starts the session and sets $isLogge
 <!-- Main Content -->
 <div id="main">
     <section>
-    <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Booking and Events</h1>
+       <p class="titles"style="text-align: left;">booking and events</p>
     <hr class="hr-shadow" />
         <h2 style="text-align: center;">Book your block screenings, cinema ads, product launches, press conferences, celebration parties, seminars and other corporate events or gatherings at Movieworld cinemas.</h2>
         <p style="text-align: left;">For Movieworld sales or booking inquiries, please email us at <span style="color: blue;">movieworld@gmail.com</span> with the following information:</p>

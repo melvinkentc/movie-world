@@ -4,7 +4,7 @@ include 'php/header.php'; // header already starts the session and sets $isLogge
 
 <div id="main">
   <section>
-    <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Coming Soon</h1>
+      <p class="titles"style="text-align: left;">coming soon</p>
     <hr class="hr-shadow" />
     
     <!-- Add your dynamic or static movie listings below -->
@@ -30,3 +30,7 @@ include 'php/header.php'; // header already starts the session and sets $isLogge
 <!-- Custom Scripts -->
 <script src="js/myscript.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="js/modals.js"></script>
+<script src="js/date.js"></script>
+<script src="js/contactform.js"></script>
+<?php include 'php/login_error_handler.php'; ?>

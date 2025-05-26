@@ -4,7 +4,7 @@ include 'php/header.php'; // header already starts the session and sets $isLogge
 <!-- Main Content -->
 <div id="main">
   <section>
-    <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Advance Ticket Selling</h1>
+    <p class="titles"style="text-align: left;">Advance Ticket Selling</p>
     <hr class="hr-shadow" />
     
     <!-- Add your dynamic or static movie listings below -->

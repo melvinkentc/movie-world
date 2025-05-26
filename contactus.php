@@ -6,7 +6,7 @@ include 'php/header.php'; // header already starts the session and sets $isLogge
 <div id="main">
   <section>
     <div class="contactus">
-      <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Contact Us</h1>
+         <p class="titles"style="text-align: left;">contact us</p>
     </div>
     <hr class="hr-shadow" />
 

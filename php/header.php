@@ -27,8 +27,9 @@
         <li style="color:white; font-weight:bold;">Welcome, <?= $username ?></li>
         <li><a href="/movie-world/php/logout.php">LOGOUT</a></li>
       <?php else: ?>
-        <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</a></li>
         <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</a></li>
+        <li><a href="#" class="signup-button" data-bs-toggle="modal" data-bs-target="#registerModal">SIGN UP</a></li>
+        
       <?php endif; ?>
     </ul>
     <!-- Hamburger Icon for Mobile -->

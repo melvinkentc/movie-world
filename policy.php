@@ -1,10 +1,11 @@
 <?php
 include 'php/header.php'; // header already starts the session and sets $isLoggedIn/$username
 ?>
-
-<div id="main" class="container my-5">
-  <section>
-    <h1 style="text-align: left; font-size: 40px; font-weight: bold;">Privacy Policy</h1>
+<!-- Main Content -->
+<div id="main">
+ 
+<section>
+       <p class="titles"style="text-align: left;">Privacy and policy</p>
     <hr class="hr-shadow" />
 
     <div class="dropdown-container">
@@ -93,5 +94,10 @@ include 'php/header.php'; // header already starts the session and sets $isLogge
     </div>
   </section>
 </div>
+</div>
 
-<?php include 'php/footer.php'; ?>
+<?php include 'php/footer.php'; ?> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/modals.js"></script> 
+<script src="js/date.js"></script>  
+<?php include 'php/login_error_handler.php'; ?> 
