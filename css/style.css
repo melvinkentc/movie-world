@@ -391,7 +391,7 @@ nav ul li a.active {
   width: 280px;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
+  z-index: 1040; /* Allow modal backdrop to appear above */
 }
 
 .cookie-popup p {
@@ -400,12 +400,12 @@ nav ul li a.active {
 }
 
 .cookie-popup a {
-  color: #4CAF50;
+  color: #de1002;
   text-decoration: underline;
 }
 
 .cookie-popup button {
-  background-color: #4CAF50;
+  background-color: #de1002;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -417,7 +417,7 @@ nav ul li a.active {
 }
 
 .cookie-popup button:hover {
-  background-color: #45a049;
+  background-color: #c21105;
 }
 
 .policy {
@@ -450,6 +450,9 @@ font-size: x-large;
   font-size: xx-large;
   text-align: center;
   margin-top: 40px;
+}
+#contact-form label {
+  color: white;
 }
 /* Basic Dropdown Styles */
 .dropdown {
@@ -546,7 +549,7 @@ form {
   min-height: 100px;
 }
 .send-btn {
-  background-color: #007BFF;
+  background-color: #de1002;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -557,7 +560,7 @@ form {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .send-btn:hover {
-  background-color: #0056b3;
+  background-color: #b80e02;
   transform: translateY(-2px);
 }
 .send-btn:active {
@@ -674,13 +677,15 @@ textarea.invalid {
   color: #eee !important; /* light text */
   border: none; /* optional: remove border for cleaner look */
 }
-
+.modal-title {
+  color: #de1002;
+}
 /* Optional: modal header and footer background */
 .modal-header,
 .modal-footer {
-  background-color: #1f1f1f !important;
-  border-bottom: 1px solid #333;
-  border-top: 1px solid #333;
+  background-color:transparent  !important;
+  border-bottom: transparent;
+  border-top: transparent;
 }
 
 /* Close button color */
@@ -694,7 +699,22 @@ textarea.invalid {
   border: 1px solid #444 !important;
   color: #eee !important;
 }
-
+.white-shadow {
+  box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.4);
+  border-radius: 10px; /* Optional: smoother corners */
+}
 .modal-body .form-label {
   color: #ccc !important;
+}
+.btn-custom-red {
+  background-color: #de1002;
+  color: white;
+  border: none;
+}
+
+.btn-custom-red:hover {
+  background-color: #bb0e01; /* Slightly darker for hover */
+}
+.cookie-button{
+  color: #de1002;
 }

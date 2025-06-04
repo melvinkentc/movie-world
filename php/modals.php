@@ -1,7 +1,7 @@
 <!-- Register Modal -->
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+    <div class="modal-content white-shadow">
       <div class="modal-header">
         <h5 class="modal-title">SIGN UP</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -26,7 +26,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-success">Save</button>
+            <button type="submit" class="btn btn-custom-red">Sign up</button>
           </div>
         </form>
       </div>
@@ -37,7 +37,7 @@
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+    <div class="modal-content white-shadow">
       <div class="modal-header">
         <h5 class="modal-title">LOGIN</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -57,7 +57,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-custom-red">Login</button>
           </div>
         </form>
       </div>
